@@ -1,5 +1,7 @@
 # pest-plugin-bisect
 
+[![Tests](https://github.com/dotMavriQ/pest-plugin-bisect/actions/workflows/tests.yml/badge.svg)](https://github.com/dotMavriQ/pest-plugin-bisect/actions/workflows/tests.yml)
+
 A Pest plugin that isolates order-dependent test failures.
 
 When a suite passes in its usual order but fails under `--order-by=random`, the

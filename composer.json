@@ -1,0 +1,74 @@
+{
+    "name": "dotmavriq/pest-plugin-bisect",
+    "description": "Isolate order-dependent test failures in Pest.",
+    "keywords": [
+        "pest",
+        "phpunit",
+        "testing",
+        "plugin",
+        "bisect",
+        "flaky-tests",
+        "test-order",
+        "delta-debugging"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dotMavriQ"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/dotmavriq/pest-plugin-bisect/issues",
+        "source": "https://github.com/dotmavriq/pest-plugin-bisect"
+    },
+    "require": {
+        "php": "^8.4",
+        "pestphp/pest": "^5.1",
+        "pestphp/pest-plugin": "^5.0",
+        "symfony/process": "^7.0 || ^8.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.30",
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pest\\Bisect\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        },
+        "pest": {
+            "plugins": [
+                "Pest\\Bisect\\Plugin"
+            ]
+        }
+    },
+    "scripts": {
+        "lint": "pint",
+        "fixture:install": "@composer install --working-dir=fixtures/flaky --no-interaction",
+        "test:lint": "pint --test",
+        "test:types": "phpstan analyse --no-progress",
+        "test:unit": "pest --colors=always",
+        "test:coverage": "pest --coverage --min=95 --colors=always",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}

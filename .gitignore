@@ -1,0 +1,9 @@
+/vendor
+/composer.lock
+/.phpunit.cache
+/.pest-bisect.xml
+/fixtures/flaky/vendor
+/fixtures/flaky/composer.lock
+/fixtures/flaky/.phpunit.cache
+/fixtures/flaky/.pest-bisect.xml
+.DS_Store

@@ -1,6 +1,8 @@
 # pest-plugin-bisect
 
+[![Latest version](https://img.shields.io/packagist/v/dotmavriq/pest-plugin-bisect.svg)](https://packagist.org/packages/dotmavriq/pest-plugin-bisect)
 [![Tests](https://github.com/dotMavriQ/pest-plugin-bisect/actions/workflows/tests.yml/badge.svg)](https://github.com/dotMavriQ/pest-plugin-bisect/actions/workflows/tests.yml)
+[![License](https://img.shields.io/packagist/l/dotmavriq/pest-plugin-bisect.svg)](LICENSE.md)
 
 A Pest plugin that isolates order-dependent test failures.
 

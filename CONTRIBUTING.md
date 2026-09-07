@@ -37,34 +37,22 @@ baseline. Keep both clean. Follow SemVer for anything user facing.
 
 ## Releasing
 
-First time only:
+The package is on Packagist and updates from GitHub tags automatically.
 
-1. The repository must be public for Packagist to index it.
-2. Submit the repository URL at https://packagist.org/packages/submit.
-3. Install the Packagist GitHub app (https://github.com/apps/packagist) on the
-   repository so new tags sync automatically.
-4. Once the package is on Packagist and CI has run on the default branch, add the
-   badges to the top of `README.md`:
-
-   ```markdown
-   [![Latest version](https://img.shields.io/packagist/v/dotmavriq/pest-plugin-bisect.svg)](https://packagist.org/packages/dotmavriq/pest-plugin-bisect)
-   [![Tests](https://github.com/dotmavriq/pest-plugin-bisect/actions/workflows/tests.yml/badge.svg)](https://github.com/dotmavriq/pest-plugin-bisect/actions/workflows/tests.yml)
-   [![License](https://img.shields.io/packagist/l/dotmavriq/pest-plugin-bisect.svg)](LICENSE.md)
-   ```
-
-Each release:
+For each release:
 
 1. Move the `[Unreleased]` block in `CHANGELOG.md` under a new version heading with
-   today's date. Commit it.
+   today's date, and add the compare link at the bottom. Commit it.
 2. Tag and push:
 
    ```bash
-   git tag v1.0.0
+   git tag -a v1.1.0 -m v1.1.0
    git push origin main --tags
    ```
 
-   Composer reads versions from tags. Without a tag the package only resolves as
+   Composer reads versions from tags. Without a tag a change only resolves as
    `dev-main`.
+3. Cut a GitHub release from the tag with the changelog entry as the notes.
 3. Packagist picks the tag up within a minute. Confirm the new version shows at
    https://packagist.org/packages/dotmavriq/pest-plugin-bisect.
 4. Optionally cut a GitHub release from the tag with the changelog entry as the

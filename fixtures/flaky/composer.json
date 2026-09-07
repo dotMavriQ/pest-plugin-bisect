@@ -1,0 +1,16 @@
+{
+    "name": "fixture/flaky",
+    "description": "A suite with a planted order dependency, used by the plugin's feature tests.",
+    "require-dev": {
+        "pestphp/pest": "^5.1",
+        "dotmavriq/pest-plugin-bisect": "@dev"
+    },
+    "repositories": [
+        { "type": "path", "url": "../..", "options": { "symlink": true } }
+    ],
+    "config": {
+        "allow-plugins": { "pestphp/pest-plugin": true }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
